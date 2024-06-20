@@ -26,8 +26,8 @@ function Login() {
     event.preventDefault();
     axios
       .post("http://localhost:8001/login", values)
-      .then((res) => console.log((currentState = res.data.Status)))
-      .then((res) => {
+      .then(res => console.log(currentState = res.data.Status))
+      .then(res => {
         if (currentState == "success") {
           navigate("/");
         }
