@@ -17,7 +17,7 @@ function Register() {
       axios.post("http://localhost:8001/register", values)
       .then(res => console.log(currentState = res.data.Status))
       .then(res => {
-        if(currentState == "success"){
+        if(currentState === "success"){
           navigate('/login');
         }
       })

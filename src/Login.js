@@ -17,8 +17,6 @@ function Login() {
 
   window.amazon.Login.setClientId('amzn1.application-oa2-client.b9bfa72ebbce4766807145912506899d');
 
-  const amazonLoginUrl = "http://localhost:5173/auth/amazon"
-
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
   let currentState = "";
@@ -28,7 +26,7 @@ function Login() {
       .post("http://localhost:8001/login", values)
       .then(res => console.log(currentState = res.data.Status))
       .then(res => {
-        if (currentState == "success") {
+        if (currentState === "success") {
           navigate("/");
         }
       })
@@ -143,7 +141,7 @@ function Login() {
               className="w-full bg-green-500 text-white px-4 py-2 rounded-lg focus:outline-none"
               type="submit"
             > */}
-              <a href="" id="LoginWithAmazon" onClick={handleAmazonLogin}>
+              <a href="/" id="LoginWithAmazon" onClick={handleAmazonLogin}>
                 <img
                   border="0"
                   alt="Login with Amazon"
